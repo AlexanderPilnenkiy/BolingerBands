@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BolingerBands.Source.Chart;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,13 @@ namespace BolingerBands
         public MainWindow()
         {
             InitializeComponent();
+            OnLoad();
+        }
+
+        void OnLoad()
+        {
+            DrawField drawField = new DrawField();
+            drawField.Paint(this);
         }
     }
 }

@@ -8,7 +8,6 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
         Title="Bollinger Bands" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
-        
+    <Grid x:Name="chartGrid" Margin="10, 10, 150, 50">
     </Grid>
 </Window>
