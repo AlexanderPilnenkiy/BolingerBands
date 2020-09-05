@@ -33,7 +33,7 @@ namespace BolingerBands.Source.Chart
             {
                 DrawVerticalLine(mainWindow, i);
             }
-            for (int i = 0; i < mainWindow.Height - 50; i += 75)
+            for (int i = 0; i < mainWindow.Height - 50; i += 50)
             {
                 DrawHorizontalLine(mainWindow, i);
             }
@@ -43,6 +43,7 @@ namespace BolingerBands.Source.Chart
         {
             Line line = new Line()
             {
+                StrokeDashArray = new DoubleCollection() { 10 },
                 X1 = X,
                 Y1 = 0,
                 X2 = X,
@@ -56,6 +57,7 @@ namespace BolingerBands.Source.Chart
         {
             Line line = new Line()
             {
+                StrokeDashArray = new DoubleCollection() { 10 },
                 X1 = 0,
                 Y1 = Y,
                 X2 = 650,
