@@ -32,37 +32,23 @@ namespace BolingerBands.Source.Chart
             int Max = Settings.ChartWidth, Step = 50;
             for (int i = 0; i < Max; i += Step)
             {
-                DrawVerticalLine(mainWindow, i);
+                DrawLine(mainWindow, i, i, 0, mainWindow.Height);            //vertical
             }
             for (int i = 15; i < 500; i += Step)
             {
-                DrawHorizontalLine(mainWindow, i, Max);
+                DrawLine(mainWindow, 0, Max, i, i);                          //horizontal
             }
         }
 
-        public void DrawVerticalLine(MainWindow mainWindow, int X)
+        public void DrawLine(MainWindow mainWindow, int X1, int X2, int Y1, double Y2)
         {
             Line line = new Line()
             {
                 StrokeDashArray = new DoubleCollection() { 10 },
-                X1 = X,
-                Y1 = 0,
-                X2 = X,
-                Y2 = mainWindow.Height,
-                Stroke = Brushes.LightGray
-            };
-            mainWindow.meshGrid.Children.Add(line);
-        }
-
-        public void DrawHorizontalLine(MainWindow mainWindow, int Y, int X2)
-        {
-            Line line = new Line()
-            {
-                StrokeDashArray = new DoubleCollection() { 10 },
-                X1 = 0,
-                Y1 = Y,
+                X1 = X1,
+                Y1 = Y1,
                 X2 = X2,
-                Y2 = Y,
+                Y2 = Y2,
                 Stroke = Brushes.LightGray
             };
             mainWindow.meshGrid.Children.Add(line);
