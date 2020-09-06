@@ -1,4 +1,5 @@
 ﻿using BolingerBands.Source.Chart;
+using BolingerBands.Source.Legend;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,12 @@ namespace BolingerBands
         {
             DrawField drawField = new DrawField();
             drawField.Paint(this);
+        }
+
+        private void getChartLegeng_Click(object sender, RoutedEventArgs e)
+        {
+            WriteLegend writeLegend = new WriteLegend();
+            writeLegend.Write(this);
         }
     }
 }

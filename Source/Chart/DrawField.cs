@@ -1,4 +1,4 @@
-﻿using BolingerBands.Source.Services;
+﻿using BolingerBands.Source.Configs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace BolingerBands.Source.Chart
 {
-    public class DrawField : IPaint, IControlsDrawer
+    public class DrawField
     {
         public void Paint(MainWindow mainWindow)
         {
@@ -29,13 +29,14 @@ namespace BolingerBands.Source.Chart
 
         public void DrawMesh(MainWindow mainWindow)
         {
-            for (int i = 0; i < mainWindow.Width - 150; i += 50)
+            int Max = Settings.ChartWidth, Step = 50;
+            for (int i = 15; i < Max; i += Step)
             {
                 DrawVerticalLine(mainWindow, i);
             }
-            for (int i = 0; i < mainWindow.Height - 50; i += 50)
+            for (int i = 15; i < 500; i += Step)
             {
-                DrawHorizontalLine(mainWindow, i);
+                DrawHorizontalLine(mainWindow, i, Max);
             }
         }
 
@@ -47,24 +48,24 @@ namespace BolingerBands.Source.Chart
                 X1 = X,
                 Y1 = 0,
                 X2 = X,
-                Y2 = 400,
+                Y2 = mainWindow.Height,
                 Stroke = Brushes.LightGray
             };
-            mainWindow.chartGrid.Children.Add(line);
+            mainWindow.meshGrid.Children.Add(line);
         }
 
-        public void DrawHorizontalLine(MainWindow mainWindow, int Y)
+        public void DrawHorizontalLine(MainWindow mainWindow, int Y, int X2)
         {
             Line line = new Line()
             {
                 StrokeDashArray = new DoubleCollection() { 10 },
                 X1 = 0,
                 Y1 = Y,
-                X2 = 650,
+                X2 = X2,
                 Y2 = Y,
                 Stroke = Brushes.LightGray
             };
-            mainWindow.chartGrid.Children.Add(line);
+            mainWindow.meshGrid.Children.Add(line);
         }
     }
 }

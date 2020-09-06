@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BolingerBands.Source.Services
+namespace BolingerBands.Source.Configs
 {
-    public interface IPaint
+    class Settings
     {
-        void Paint(MainWindow mainWindow);
+        public static int ChartWidth = 2450;
     }
 }

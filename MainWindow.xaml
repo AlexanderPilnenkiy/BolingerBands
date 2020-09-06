@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
-        Title="Bollinger Bands" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Bollinger Bands" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid x:Name="chartGrid" Margin="10, 10, 150, 50">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                HorizontalScrollBarVisibility="Visible">
+            <Grid x:Name="meshGrid"/>
+        </ScrollViewer>
+        <Grid Margin="840,360,-141.4,-40" Height="35" VerticalAlignment="Top">
+            <Button x:Name="getChartLegeng" Content="Загрузить" BorderThickness="2"
+                    FontFamily="Segoe UI" materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                    FontSize="12" IsEnabled="true" Background="White" Click="getChartLegeng_Click"
+                    BorderBrush="#FF260940" Visibility="Visible" Cursor="Hand" Foreground="#FF260940"/>
+        </Grid>
     </Grid>
 </Window>
