@@ -9,5 +9,6 @@ namespace BolingerBands.Source.Configs
     class Settings
     {
         public static int ChartWidth = 2450;
+        public static int ChartHeight = 500;
     }
 }

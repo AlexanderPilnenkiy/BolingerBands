@@ -30,7 +30,7 @@ namespace BolingerBands.Source.Chart
         public void DrawMesh(MainWindow mainWindow)
         {
             int Max = Settings.ChartWidth, Step = 50;
-            for (int i = 15; i < Max; i += Step)
+            for (int i = 0; i < Max; i += Step)
             {
                 DrawVerticalLine(mainWindow, i);
             }

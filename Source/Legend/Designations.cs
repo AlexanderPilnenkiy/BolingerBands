@@ -26,9 +26,7 @@ namespace BolingerBands.Source.Legend
             openDialog.DefaultExt = "*.xls;*.xlsx";
             openDialog.Filter = "файл Excel (Spisok.xlsx)|*.xlsx";
             openDialog.Title = "Загрузка файла с данными";
-            if (!(openDialog.ShowDialog() == DialogResult.OK))
-            {
-            }
+            if (!(openDialog.ShowDialog() == DialogResult.OK)) { }
             var workbook = new XLWorkbook(openDialog.FileName);
             var worksheet = workbook.Worksheet(1);
             var rows = worksheet.RangeUsed().RowsUsed();
@@ -42,8 +40,6 @@ namespace BolingerBands.Source.Legend
             }
             Max = High.Max();
             Min = Low.Min();
-            //Thread thread = new Thread(GetRightLegend);
-            //thread.Start();
             GetRightLegend();
         }
 

@@ -99,6 +99,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Source\Chart\DrawField.cs" />
+    <Compile Include="Source\Chart\DrawLines.cs" />
     <Compile Include="Source\Configs\Settings.cs" />
     <Compile Include="Source\Legend\Designations.cs" />
     <Compile Include="Source\Legend\WriteLegend.cs" />
